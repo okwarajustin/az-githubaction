@@ -13,6 +13,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
+    - uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: install terraform
       uses: hashicorp/setup-terraform@v2
 
@@ -23,4 +27,12 @@ jobs:
     - name: Terraform Validate
       id: validate
       run: terraform validate
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply --auto-approve
       
