@@ -8,11 +8,7 @@ variable "rg" {
   default = "demogithubaction"
 }
 
-variable "region" {
-  description = "location for vm"
-  type        = string
-  default =    "West US"
-}
+
 
 variable "name" {
  default = "my-terraform-vm"
