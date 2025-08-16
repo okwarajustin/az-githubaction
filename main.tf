@@ -1,6 +1,6 @@
 data "azurerm_resource_group" "rg" {
-  name     = var.rg
-  
+  name = var.rg
+
 }
 
 resource "azurerm_virtual_network" "example" {
@@ -30,12 +30,12 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
-  name                = var.name
-  resource_group_name = data.azurerm_resource_group.rg.name
-  location            = data.azurerm_resource_group.rg.location
-  size                = var.size
-  admin_username      = "adminuser"
-  admin_password = "AdminPassword123!"
+  name                            = var.name
+  resource_group_name             = data.azurerm_resource_group.rg.name
+  location                        = data.azurerm_resource_group.rg.location
+  size                            = var.size
+  admin_username                  = "adminuser"
+  admin_password                  = "AdminPassword123!"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,
