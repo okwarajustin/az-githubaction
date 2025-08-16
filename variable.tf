@@ -11,7 +11,7 @@ variable "rg" {
 
 
 variable "name" {
- default = "terraform-vm-githubhub_actions"
+ default = "terraform-vm-github-actions"
 }
 
 variable "size" {
